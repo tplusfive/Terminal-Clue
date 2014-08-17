@@ -82,24 +82,24 @@ Stdy
 
 Moves
 
-Backlog
+Backlog (1st level indented items first, 2nd level indent later)
 * As a player, I  would like to pick my playing piece (suspect). Time Spent: 9h 00m (attempted MVC including research and then rolled back)
-As a player, I would like to play the computer and/or other people.
-As a player, I would like the computer to pick its playing pieces automatically.
+  * As a player, I would like to play the computer and/or other people.
+  * As a player, I would like the computer to pick its playing pieces automatically.
 * As a player, I would like to randomly assign one weapon, one suspect and one room to the Confidential Solution Envelope.
-As a player, I would like the computer to shuffle all remaining cards and deal them.
-As a player, I would like the computer to keep track of who goes next (Miss Scarlet, Col. Mustard, Mrs. White, Mr. Green, Mrs. Peacock, Prof. Plum)
-As a player, I would like to choose whether to roll dice or use secret passageway.
+  * As a player, I would like the computer to shuffle all remaining cards and deal them.
+  * As a player, I would like the computer to keep track of who goes next (Miss Scarlet, Col. Mustard, Mrs. White, Mr. Green, Mrs. Peacock, Prof. Plum)
+  * As a player, I would like to choose whether to roll dice or use secret passageway.
 * As a player, I would like to roll the dice and move.
 * As a player, I would like to know how far each room is from my current room.
-As a player, I would like to be able to move part way toward a room.
-As a player, I would like to use a secret passageway to move.
+  * As a player, I would like to be able to move part way toward a room.
+  * As a player, I would like to use a secret passageway to move.
 * As a player, I would like make a suggestion (suspect, weapon, room) when I move into a room.
-As a player, I would like to disprove a suggestion.
+  * As a player, I would like to disprove a suggestion.
 * As a player, I would like to make an accusation.
 * As a player, I would like to verify an accusation.
-As a player, I would like to pass to the next player if I can't disprove/verify.
-As a player, I would like anyone who makes a wrong accusation to be out of the game.
-As a player, I would like to keep my own detective notepad? or have computer do it?
-As a player, I would like it to be possible for room doors to be blocked by other players.
-As a player, I would like if all doors are blocked to a room no one can leave.
+  * As a player, I would like to pass to the next player if I can't disprove/verify.
+  * As a player, I would like anyone who makes a wrong accusation to be out of the game.
+  * As a player, I would like to keep my own detective notepad? or have computer do it?
+  * As a player, I would like it to be possible for room doors to be blocked by other players.
+  * As a player, I would like if all doors are blocked to a room no one can leave.
