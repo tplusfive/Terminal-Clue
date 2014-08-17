@@ -3,7 +3,7 @@ ex45clue
 
 Terminal version of the game Clue.
 
-Let's do Clue
+I'm doing this as my game for Exercise 45 of Learn Ruby the Hard Way.  I wanted to  do it using test-driven development and with a proper project structure so I jumped ahead to exercises 46 and 47 and then came back to this one.  After coding what you see in the initial load to my GitHub repository I decided to try and follow the MVC architectural pattern because ultimately I want to understand that. After going down that road some distance I decided that was not such a great idea - I was truly biting off too much plus MVC seems to be intended for GUI applications.  That detour convinced me it was time to start using a code versioning system so I could more easily backtrack if needed.  So here I go again, but this time with a rewind capability :)
 
 * Suspects
 .Col. Mustard
