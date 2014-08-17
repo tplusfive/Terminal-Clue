@@ -1,4 +1,4 @@
-# require "ex45clue/suspects.rb" # Do not need this since ex45clue loads it - good/bad practice?
+# require "terminal_clue/suspects.rb" # Do not need this since ex45clue loads it - good/bad practice?
 
 class Player
   

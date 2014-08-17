@@ -83,15 +83,17 @@ Stdy
 Moves
 
 Backlog (1st level indented items first, 2nd level indent later)
-* As a player, I  would like to pick my playing piece (suspect). Time Spent: 9h 00m (attempted MVC including research and then rolled back)
+* DONE: As a player, I  would like to pick my playing piece (suspect). Time Spent: 9h 00m (attempted MVC including research and then rolled back)
   * As a player, I would like to play the computer and/or other people.
   * As a player, I would like the computer to pick its playing pieces automatically.
-* As a player, I would like to randomly assign one weapon, one suspect and one room to the Confidential Solution Envelope.
+* As a player, I would like to randomly assign one suspect to the Confidential Solution Envelope.  Time Spent: 30m.  NEXT: create list of suspects, create envelope object,...
+* As a player, I would like to randomly assign one weapon to the Confidential Solution Envelope.
+* As a player, I would like to randomly assign one room to the Confidential Solution Envelope.
   * As a player, I would like the computer to shuffle all remaining cards and deal them.
   * As a player, I would like the computer to keep track of who goes next (Miss Scarlet, Col. Mustard, Mrs. White, Mr. Green, Mrs. Peacock, Prof. Plum)
   * As a player, I would like to choose whether to roll dice or use secret passageway.
-* As a player, I would like to roll the dice and move.
-* As a player, I would like to know how far each room is from my current room.
+* As a player, I would like to roll the dice and move all the way to a room.
+  * As a player, I would like to know how far each room is from my current room.
   * As a player, I would like to be able to move part way toward a room.
   * As a player, I would like to use a secret passageway to move.
 * As a player, I would like make a suggestion (suspect, weapon, room) when I move into a room.

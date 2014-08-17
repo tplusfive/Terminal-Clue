@@ -1,4 +1,4 @@
-class Suspects
+class Pieces
   
   # There should only be one instance of Suspects or these counts will be off
   # Tried a class variable but didn't see a good way to re-initialize for unit tests
