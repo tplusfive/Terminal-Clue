@@ -3,6 +3,8 @@ require "~/GitHub/Terminal-Clue/lib/terminal_clue/player.rb"
 require "~/GitHub/Terminal-Clue/lib/terminal_clue/pieces.rb"
 require "~/GitHub/Terminal-Clue/lib/terminal_clue/solution_envelope.rb"
 require "~/GitHub/Terminal-Clue/lib/terminal_clue/suspects.rb"
+require "~/GitHub/Terminal-Clue/lib/terminal_clue/weapons.rb"
+require "~/GitHub/Terminal-Clue/lib/terminal_clue/rooms.rb"
 
 player = Player.new
 pieces = Pieces.new
@@ -13,3 +15,9 @@ solution_envelope = SolutionEnvelope.new
 suspects = Suspects.new
 assigned_suspect = solution_envelope.assign_suspect(suspects)
 puts assigned_suspect + " has been added to the Confidential Solutions Envelope."
+weapons = Weapons.new
+assigned_weapon = solution_envelope.assign_weapon(weapons)
+puts "The " + assigned_weapon + " has been added to the Confidential Solutions Envelope."
+rooms = Rooms.new
+assigned_room = solution_envelope.assign_room(rooms)
+puts "The " + assigned_room + " has been added to the Confidential Solutions Envelope."
