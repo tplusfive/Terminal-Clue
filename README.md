@@ -86,7 +86,7 @@ Backlog (1st level indented items first, 2nd level indent later)
 * DONE: As a player, I  would like to pick my playing piece (suspect). Time Spent: 9h 00m (attempted MVC including research and then rolled back)
   * As a player, I would like to play the computer and/or other people.
   * As a player, I would like the computer to pick its playing pieces automatically.
-* As a player, I would like to randomly assign one suspect to the Confidential Solution Envelope.  Time Spent: 1h 30m.  NEXT: Mrs. White not being assigned ever in random test
+* As a player, I would like to randomly assign one suspect to the Confidential Solution Envelope.  Time Spent: 1h 45m.  NEXT: Write unit test for terminal clue? Thinking no.
 * As a player, I would like to randomly assign one weapon to the Confidential Solution Envelope.
 * As a player, I would like to randomly assign one room to the Confidential Solution Envelope.
   * As a player, I would like the computer to shuffle all remaining cards and deal them.
