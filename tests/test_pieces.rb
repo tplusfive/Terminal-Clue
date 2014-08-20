@@ -23,15 +23,4 @@ class TestPieces < Test::Unit::TestCase
     assert_equal(nil, pieces.picked?("yg41hg"))
   end
   
-  def test_assign_starting_location
-    puts " testing"
-    piece = Pieces.new.keys
-    player = Player.new
-    # TODO Let's try all the pieces to make sure they all have a starting location
-    player.pick_piece(pieces, true, "Col. Mustard")
-    piece.assign_starting_location(player)
-    assert_equal("Dining Room", player.location)
-    assert_not_equal("blah", player.location) # wanted to see if my test was doing anything
-  end  
-  
 end
