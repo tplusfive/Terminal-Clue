@@ -2,7 +2,12 @@
 
 class Player
   
-  attr_reader :piece
+  attr_reader :piece, :location
+  
+  @@starting_location = 
+    { "Col. Mustard" => "Dining Room", "Prof. Plum" => "Study",
+      "Mr. Green" => "Conservatory", "Mrs. Peacock" => "Billiard Room",
+      "Miss Scarlet" => "Lounge", "Mrs. White" => "Ballroom" }
   
   def initialize
   end
@@ -32,6 +37,10 @@ class Player
       end
     end while (already_taken == true or already_taken == nil) and test == false
     return response # For unit testing only
+  end
+  
+  def assign_starting_location
+    @location = @@starting_location[self.piece]
   end
 
 end

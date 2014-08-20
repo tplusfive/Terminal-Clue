@@ -88,11 +88,13 @@ Backlog (1st level indented items first, 2nd level indent later)
   * As a player, I would like the computer to pick its playing pieces automatically.
 * DONE: As a player, I would like to randomly assign one suspect to the Confidential Solution Envelope.  Time Spent: 1h 45m
 * DONE: As a player, I would like to randomly assign one weapon to the Confidential Solution Envelope. Time spent: 20m
-* DONE: As a player, I would like to randomly assign one room to the Confidential Solution Envelope. Time spent: 20m
+* DONE: As a player, I would like to randomly assign one room to the Confidential Solution Envelope. Time spent: 50m
   * As a player, I would like the computer to shuffle all remaining cards and deal them.
+* As a player, I would like each player assigned to a starting spot or starting room.
   * As a player, I would like the computer to keep track of who goes next (Miss Scarlet, Col. Mustard, Mrs. White, Mr. Green, Mrs. Peacock, Prof. Plum)
   * As a player, I would like to choose whether to roll dice or use secret passageway.
-* As a player, I would like to roll the dice and move all the way to a room.
+* DONE:  As a player, I would like to roll the dice. 1h
+* As a player, I would like to move all the way to a room.  Design: class for each room, with attributes for each room being distance to every other room.
   * As a player, I would like to know how far each room is from my current room.
   * As a player, I would like to be able to move part way toward a room.
   * As a player, I would like to use a secret passageway to move.

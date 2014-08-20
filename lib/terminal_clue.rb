@@ -21,3 +21,8 @@ puts "The " + assigned_weapon + " has been added to the Confidential Solutions E
 rooms = Rooms.new
 assigned_room = solution_envelope.assign_room(rooms)
 puts "The " + assigned_room + " has been added to the Confidential Solutions Envelope."
+
+player.assign_starting_location
+puts player.piece + "'s will start in " + player.location
+
+# roll dice functionality available
