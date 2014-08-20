@@ -90,7 +90,8 @@ Backlog (1st level indented items first, 2nd level indent later)
 * DONE: As a player, I would like to randomly assign one weapon to the Confidential Solution Envelope. Time spent: 20m
 * DONE: As a player, I would like to randomly assign one room to the Confidential Solution Envelope. Time spent: 50m
   * As a player, I would like the computer to shuffle all remaining cards and deal them.
-* As a player, I would like each player assigned to a starting spot or starting room.
+* As a player, I would like each player assigned to a starting spot or starting room.  Time spent: 47m. NEXT does the test need to test every room assignment? Hmm...
+
   * As a player, I would like the computer to keep track of who goes next (Miss Scarlet, Col. Mustard, Mrs. White, Mr. Green, Mrs. Peacock, Prof. Plum)
   * As a player, I would like to choose whether to roll dice or use secret passageway.
 * DONE:  As a player, I would like to roll the dice. 1h

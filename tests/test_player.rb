@@ -19,7 +19,7 @@ class TestPlayer < Test::Unit::TestCase
   
   def test_assign_starting_location
     puts " testing"
-    pieces = Pieces.new
+    pieces = Pieces.new.keys
     player = Player.new
     player.pick_piece(pieces, true, "Col. Mustard")
     player.assign_starting_location

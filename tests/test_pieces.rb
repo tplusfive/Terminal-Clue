@@ -7,9 +7,9 @@ class TestPieces < Test::Unit::TestCase
     puts " testing"
     pieces = Pieces.new
     assert_equal(
-      { "Col. Mustard" => false, "Prof. Plum" => false, "Mr. Green" => false,
-        "Mrs. Peacock" => false, "Miss Scarlet" => false,
-        "Mrs. White" => false }, 
+      [ "Col. Mustard", "Prof. Plum", "Mr. Green",
+        "Mrs. Peacock", "Miss Scarlet",
+        "Mrs. White" ], 
       pieces.list
     )
   end
