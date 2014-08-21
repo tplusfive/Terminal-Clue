@@ -1,5 +1,6 @@
 # require "terminal_clue/suspects.rb" # Do not need this since ex45clue loads it - good/bad practice?
 
+# Models the player
 class Player
   
   attr_reader :piece, :location

@@ -1,3 +1,4 @@
+# Models the weapon piece and the weapon card
 class Weapons
 
   attr_reader :list

@@ -1,3 +1,4 @@
+# Models the rooms on the board and the room cards
 class Rooms
 
   attr_reader :list

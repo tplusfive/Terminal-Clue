@@ -1,3 +1,4 @@
+# Models the suspect piece and the suspect card
 class Suspects
 
   attr_reader :list
