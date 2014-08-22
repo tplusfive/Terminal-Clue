@@ -5,25 +5,22 @@ class Player
   
   attr_reader :piece, :location
   
-  @@starting_location = 
-    { "Col. Mustard" => "Dining Room", "Prof. Plum" => "Study",
-      "Mr. Green" => "Conservatory", "Mrs. Peacock" => "Billiard Room",
-      "Miss Scarlet" => "Lounge", "Mrs. White" => "Ballroom" }
-  
   def initialize
   end
   
-  def pick_piece(suspects, test = false, pick = nil) # test and pick for unit testing
+  def pick_piece(test = false, pick = nil) # test and pick for unit testing
     begin
       puts "Choose your playing piece. If it says 'true' it's already been taken."
-      puts suspects.list
+      puts Suspects.list
       print "> "
       
       if test == false
         pick = gets.chomp
+      else
+        puts pick
       end
       
-      already_taken = suspects.picked?(pick)
+      already_taken = Suspects.picked?(pick)
       case already_taken # Originally had these messages in suspects.picked? but wanted to separate UI from logic
       when false
         puts response = "Got it."
@@ -38,10 +35,6 @@ class Player
       end
     end while (already_taken == true or already_taken == nil) and test == false
     return response # For unit testing only
-  end
-  
-  def assign_starting_location
-    @location = @@starting_location[self.piece]
   end
 
 end
