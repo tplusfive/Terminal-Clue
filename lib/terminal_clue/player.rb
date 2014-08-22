@@ -37,4 +37,8 @@ class Player
     return response # For unit testing only
   end
 
+  def assign_starting_location
+    @location = Suspects.starting_location[self.piece]
+  end
+
 end

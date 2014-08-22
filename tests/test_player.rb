@@ -15,5 +15,15 @@ class TestPlayer < Test::Unit::TestCase
                  player.pick_piece(true, "fy54_"))
     assert_equal("Col. Mustard", player.piece)
   end
+
+  def test_assign_starting_location
+    puts " testing"
+    player = Player.new
+    Suspects.reinitialize_picked
+    player.pick_piece(true, "Miss Scarlet")
+    player.assign_starting_location
+    assert_equal("Lounge", player.location)
+    assert_not_equal("blah", player.location) # wanted to see if my test was doing anything
+  end
   
 end
