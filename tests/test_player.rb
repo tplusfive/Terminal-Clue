@@ -32,13 +32,16 @@ class TestPlayer < Test::Unit::TestCase
 # Choose one of those rooms
 # Change player's location to new room
 
-  def test_choose_move
+  def test_choose_secret_passageway
     puts " testing"
     player = Player.new
     Suspects.reinitialize_picked
     player.pick_piece(true, "Miss Scarlet")
-    player.assign_starting_location
-    move = player.choose_move
+    player.assign_starting_location # Will be the Lounge
+    # Only 4 rooms have secret passageways and each room has only one passageway
+    # Test for room that has passageway
+    assert_equal("Conservatory", player.choose_secret_passageway)
+    # Test for one that has no passageway
   end
 
 end

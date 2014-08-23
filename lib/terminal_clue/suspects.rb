@@ -4,8 +4,7 @@ class Suspects
   @@starting_location = 
     { "Col. Mustard" => "Dining Room", "Prof. Plum" => "Study",
       "Mr. Green" => "Conservatory", "Mrs. Peacock" => "Billiard Room",
-      "Miss Scarlet" => , "Mrs. White" => "Ballroom" }
-      #"Lounge"
+      "Miss Scarlet" => "Lounge", "Mrs. White" => "Ballroom" }
 
   @@picked = 
       { "Col. Mustard" => false, "Prof. Plum" => false, "Mr. Green" => false,

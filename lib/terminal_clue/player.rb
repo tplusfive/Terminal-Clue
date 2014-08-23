@@ -40,5 +40,9 @@ class Player
   def assign_starting_location
     @location = Suspects.starting_location[self.piece]
   end
+  
+  def choose_secret_passageway
+    Rooms.secret_passageways(self.location)
+  end
 
 end
