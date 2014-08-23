@@ -93,11 +93,11 @@ Backlog (1st level indented items first, 2nd level indent later)
 * DONE: As a player, I would like each player assigned to a starting spot or starting room.  Time spent: 175m.
   * As a player, I would like the computer to keep track of who goes next (Miss Scarlet, Col. Mustard, Mrs. White, Mr. Green, Mrs. Peacock, Prof. Plum)
   * As a player, I would like to choose whether to roll dice or use secret passageway.
-* NEXT:  As a player, I would like to roll the dice. 1h  NEXT: Add to terminal_clue.rb
-* As a player, I would like to move all the way to a room.  Design: class for each room, with attributes for each room being distance to every other room.
+* DONE: As a player, I would like to roll the dice. Time spent: 1h
+  * As a player, I would like to move all the way to a room.
   * As a player, I would like to know how far each room is from my current room.
   * As a player, I would like to be able to move part way toward a room.
-  * As a player, I would like to use a secret passageway to move.
+* As a player, I would like to use a secret passageway to move to another room.   DESIGN: class for each room, with attributes for each room being distance to every other room.  Time spent: 15m
 * As a player, I would like make a suggestion (suspect, weapon, room) when I move into a room.
   * As a player, I would like to disprove a suggestion.
 * As a player, I would like to make an accusation.

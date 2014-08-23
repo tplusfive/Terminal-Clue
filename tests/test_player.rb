@@ -25,5 +25,20 @@ class TestPlayer < Test::Unit::TestCase
     assert_equal("Lounge", player.location)
     assert_not_equal("blah", player.location) # wanted to see if my test was doing anything
   end
-  
+
+# Pseudocode:
+# Determine player's location (room at this time).
+# Determine rooms that have secret passageways to current room.
+# Choose one of those rooms
+# Change player's location to new room
+
+  def test_choose_move
+    puts " testing"
+    player = Player.new
+    Suspects.reinitialize_picked
+    player.pick_piece(true, "Miss Scarlet")
+    player.assign_starting_location
+    move = player.choose_move
+  end
+
 end

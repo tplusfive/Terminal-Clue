@@ -8,7 +8,7 @@ class Player
   def initialize
   end
   
-  def pick_piece(test = false, pick = nil) # test and pick for unit testing
+  def pick_piece(test = false, pick = nil) # test, pick parameters for unit testing
     begin
       puts "Choose your playing piece. If it says 'true' it's already been taken."
       puts Suspects.list
