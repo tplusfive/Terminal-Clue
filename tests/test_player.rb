@@ -26,22 +26,37 @@ class TestPlayer < Test::Unit::TestCase
     assert_not_equal("blah", player.location) # wanted to see if my test was doing anything
   end
 
-# Pseudocode:
-# Determine player's location (room at this time).
-# Determine rooms that have secret passageways to current room.
-# Choose one of those rooms
-# Change player's location to new room
-
-  def test_choose_secret_passageway
+  def test_secret_passageway_available?
     puts " testing"
     player = Player.new
     Suspects.reinitialize_picked
     player.pick_piece(true, "Miss Scarlet")
     player.assign_starting_location # Will be the Lounge
-    # Only 4 rooms have secret passageways and each room has only one passageway
-    # Test for room that has passageway
-    assert_equal("Conservatory", player.choose_secret_passageway)
+    assert_equal(true, player.secret_passageway_available?)
     # Test for one that has no passageway
+    player2 = Player.new
+    player2.pick_piece(true, "Mrs. Peacock")
+    player2.assign_starting_location # Will be the Billiard Room
+    assert_equal(false, player2.secret_passageway_available?)
+  end
+  
+  def test_use_secret_passageway?
+    puts " testing"
+    player = Player.new
+    Suspects.reinitialize_picked
+    player.pick_piece(true, "Miss Scarlet")
+    player.assign_starting_location
+    assert_equal(true, player.use_secret_passageway?(true, "Yes"))
+    assert_equal(false, player.use_secret_passageway?(true, "No"))
+    assert_equal(nil, player.use_secret_passageway?(true, "aic45m"))
+  end
+  
+  def test_change_location
+    puts " testing"
+    player = Player.new
+    assert_equal(nil, player.location)
+    player.change_location("Billiard Room")
+    assert_equal("Billiard Room", player.location)
   end
 
 end

@@ -21,6 +21,17 @@ assigned_room = solution_envelope.assign_room(rooms)
 puts "The " + assigned_room + " has been added to the Confidential Solutions Envelope."
 
 player.assign_starting_location
-puts player.piece + " will start in " + player.location
+puts player.piece + " will start in: " + player.location
+
+=begin
+def secret_passageway_check
+  return unless player.secret_passageway_available? is true
+  choice = player.use_secret_passageway?
+  return unless choice is true
+  player.change_location
+end
+=end
+
+secret_passageway_check
 
 # roll dice functionality available

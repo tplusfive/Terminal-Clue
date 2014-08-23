@@ -97,7 +97,8 @@ Backlog (1st level indented items first, 2nd level indent later)
   * As a player, I would like to move all the way to a room.
   * As a player, I would like to know how far each room is from my current room.
   * As a player, I would like to be able to move part way toward a room.
-* As a player, I would like to use a secret passageway to move to another room.   DESIGN: class for each room, with attributes for each room being distance to every other room.  Time spent: 30m
+* As a player, I would like to use a secret passageway to move to another room.  Time spent: 3h (wrestling a lot with TDD and stories that have user interaction).  NEXT: work on secret_passageway_check in terminal_clue.rb  Maybe make it a method in Player class and make the methods it depends on private in Players class.
+
 * As a player, I would like make a suggestion (suspect, weapon, room) when I move into a room.
   * As a player, I would like to disprove a suggestion.
 * As a player, I would like to make an accusation.
