@@ -58,5 +58,26 @@ class TestPlayer < Test::Unit::TestCase
     player.change_location("Billiard Room")
     assert_equal("Billiard Room", player.location)
   end
-
+  
+  def test_secret_passageway_option
+    puts " testing"
+    player = Player.new
+    Suspects.reinitialize_picked
+    player.pick_piece(true, "Miss Scarlet")
+    player.assign_starting_location # Lounge
+    player.secret_passageway_option(true, "No")
+    assert_equal("Lounge", player.location)
+    player.secret_passageway_option(true, "Yes")
+    assert_equal("Conservatory", player.location)
+    player2 = Player.new
+    player2.pick_piece(true, "Mrs. White")
+    player2.assign_starting_location # Ballroom
+    player2.secret_passageway_option(true, "gobbledy gook")
+    assert_equal("Ballroom", player2.location) # location not changed
+    player2.secret_passageway_option(true, "Yes")
+    assert_equal("Ballroom", player2.location)
+    player2.secret_passageway_option(true, "No")
+    assert_equal("Ballroom", player2.location)
+  end
+  
 end

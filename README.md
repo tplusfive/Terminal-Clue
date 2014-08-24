@@ -88,20 +88,20 @@ Backlog (1st level indented items first, 2nd level indent later)
   * As a player, I would like the computer to pick its playing pieces automatically.
 * DONE: As a player, I would like to randomly assign one suspect to the Confidential Solution Envelope.  Time Spent: 1h 45m
 * DONE: As a player, I would like to randomly assign one weapon to the Confidential Solution Envelope. Time spent: 20m
-* DONE: As a player, I would like to randomly assign one room to the Confidential Solution Envelope. Time spent: 100m
+* DONE: As a player, I would like to randomly assign one room to the Confidential Solution Envelope. Time spent: 1h 40m
   * As a player, I would like the computer to shuffle all remaining cards and deal them.
-* DONE: As a player, I would like each player assigned to a starting spot or starting room.  Time spent: 175m.
+* DONE: As a player, I would like each player assigned to a starting spot or starting room.  Time spent: 2h 55m
   * As a player, I would like the computer to keep track of who goes next (Miss Scarlet, Col. Mustard, Mrs. White, Mr. Green, Mrs. Peacock, Prof. Plum)
   * As a player, I would like to choose whether to roll dice or use secret passageway.
 * DONE: As a player, I would like to roll the dice. Time spent: 1h
   * As a player, I would like to move all the way to a room.
   * As a player, I would like to know how far each room is from my current room.
   * As a player, I would like to be able to move part way toward a room.
-* As a player, I would like to use a secret passageway to move to another room.  Time spent: 3h (wrestling a lot with TDD and stories that have user interaction).  NEXT: work on secret_passageway_check in terminal_clue.rb  Maybe make it a method in Player class and make the methods it depends on private in Players class.
-
-* As a player, I would like make a suggestion (suspect, weapon, room) when I move into a room.
+* DONE: As a player, I would like to use a secret passageway to move to another room.  Time spent: 3h 44m (20h 30m) (wrestling a lot with TDD and stories that have user interaction).
+  * NEXT: As a player, I would like make a suggestion (suspect, weapon, room) when I move into a room.
   * As a player, I would like to disprove a suggestion.
-* As a player, I would like to make an accusation.
+  * As a player, I would like to make an accusation. 
+* As a player, I would like to play with one other persons and not the computer.
 * As a player, I would like to verify an accusation.
   * As a player, I would like to pass to the next player if I can't disprove/verify.
   * As a player, I would like anyone who makes a wrong accusation to be out of the game.

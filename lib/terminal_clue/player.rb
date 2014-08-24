@@ -41,7 +41,11 @@ class Player
   def assign_starting_location
     @location = Suspects.starting_location[@piece]
   end
-  
+
+  def change_location(location)
+    @location = location
+  end
+
   def secret_passageway_available?
     if Rooms.secret_passageways(@location) == nil
       return false
@@ -49,7 +53,7 @@ class Player
       return true
       end
   end
-  
+
   def use_secret_passageway?(test = false, choice = nil)
     begin
       puts "Do you want to take the secret passageway to " + Rooms.secret_passageways(@location) + "?"
@@ -73,8 +77,13 @@ class Player
     
   end
 
-  def change_location(location)
-    @location = location
+  # Determine if a secret passageway exists and if player wants to take it
+  def secret_passageway_option(test = false, choice = nil)
+    return unless secret_passageway_available?
+    return unless use_secret_passageway?(test, choice)
+    new_location = Rooms.secret_passageways(@location)
+    change_location(new_location)
+    puts "You are now in: " + @location
   end
 
 end
