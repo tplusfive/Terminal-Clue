@@ -7,12 +7,15 @@ class TestPlayer < Test::Unit::TestCase
     puts " testing"
     player = Player.new
     assert_equal(nil, player.piece)
+    Suspects.reinitialize_picked
     assert_equal("Got it.", player.pick_piece(true, "Col. Mustard"))
     assert_equal("Col. Mustard", player.piece)
     assert_equal("Already taken.", player.pick_piece(true, "Col. Mustard"))
     assert_equal("Col. Mustard", player.piece)
-    assert_equal("There is no suspect with that name. Come on man!", 
-                 player.pick_piece(true, "fy54_"))
+    assert_equal(
+      "There is no suspect with that name. Come on man!", 
+      player.pick_piece(true, "fy54_")
+    )
     assert_equal("Col. Mustard", player.piece)
   end
 
@@ -78,6 +81,23 @@ class TestPlayer < Test::Unit::TestCase
     assert_equal("Ballroom", player2.location)
     player2.secret_passageway_option(true, "No")
     assert_equal("Ballroom", player2.location)
+  end
+  
+  def test_pick_next_room
+    puts " testing"
+    player = Player.new
+    Suspects.reinitialize_picked
+    player.pick_piece(true, "Mr. Green")
+    player.assign_starting_location # Conservatory
+    assert_equal("Got it.", player.pick_next_room(true, "Hall"))
+    assert_equal(
+      "You're already there. Come on man!",
+      player.pick_next_room(true, "Hall")
+    )
+    assert_equal(
+      "Really? You're picking a room that doesn't exist? Come on man!",
+      player.pick_next_room(true, "a9-3v#")
+    )
   end
   
 end

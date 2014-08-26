@@ -1,17 +1,17 @@
 # Models the rooms on the board and the room cards
 class Rooms
 
-  attr_reader :list
+   @@list= 
+      [ "Hall", "Lounge", "Dining Room", "Kitchen", "Ballroom", "Conservatory",
+        "Billiard Room", "Library", "Study" ]
   
   @@secret_passageways = {
     "Conservatory" => "Lounge", "Study" => "Kitchen", "Lounge" => "Conservatory",
     "Kitchen" => "Study"
   }
   
-  def initialize(name = nil)
-    @list = 
-      [ "Hall", "Lounge", "Dining Room", "Kitchen", "Ballroom", "Conservatory",
-        "Billiard Room", "Library", "Study" ]  # TODO refactor as class variable and method
+  def self.list
+    @@list
   end
   
   def self.secret_passageways(location)

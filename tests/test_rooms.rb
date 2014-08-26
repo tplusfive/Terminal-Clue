@@ -5,7 +5,6 @@ class TestRooms < Test::Unit::TestCase
   
   def test_attr_reader
     puts " testing"
-    rooms = Rooms.new
-    assert_equal(false, rooms.list.empty?)
+    assert_equal(false, Rooms.list.empty?)
   end
 end

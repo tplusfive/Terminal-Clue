@@ -44,6 +44,7 @@ class Player
 
   def change_location(location)
     @location = location
+    puts "You are now in the " + @location
   end
 
   def secret_passageway_available?
@@ -77,13 +78,45 @@ class Player
     
   end
 
-  # Determine if a secret passageway exists and if player wants to take it
+  # Determine if a secret passageway` exists and if player wants to take it
   def secret_passageway_option(test = false, choice = nil)
     return unless secret_passageway_available?
     return unless use_secret_passageway?(test, choice)
     new_location = Rooms.secret_passageways(@location)
     change_location(new_location)
     puts "You are now in: " + @location
+  end
+  
+  def pick_next_room(test = false, pick = nil)
+    
+    begin
+      puts "To which room do you want to move?"
+      puts Rooms.list
+      print "> "
+      
+      if test == false
+        pick = gets.chomp
+      else
+        puts pick
+      end
+      
+      # BUG: Logic here is broken
+      valid_room = Rooms.list.include?(pick)
+      case valid_room
+      when true
+        puts response = "Got it."
+        change_location(pick)
+      when false
+        puts response = "You're already there. Come on man!"
+      when nil
+        puts response = "Really? You're picking a room that doesn't exist? Come on man!"
+      else
+        puts "Error in Player.pick_piece."
+        Process.exit(0)
+      end
+    end while (valid_room == false or valid_room == nil) and test == false
+    return response # For unit testing only
+  
   end
 
 end
