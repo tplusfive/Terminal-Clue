@@ -4,6 +4,7 @@ require "~/GitHub/Terminal-Clue/lib/terminal_clue/solution_envelope.rb"
 require "~/GitHub/Terminal-Clue/lib/terminal_clue/suspects.rb"
 require "~/GitHub/Terminal-Clue/lib/terminal_clue/weapons.rb"
 require "~/GitHub/Terminal-Clue/lib/terminal_clue/rooms.rb"
+require "~/GitHub/Terminal-Clue/lib/terminal_clue/dice.rb"
 
 player = Player.new
 player.pick_piece
@@ -16,8 +17,7 @@ puts assigned_suspect + " has been added to the Confidential Solutions Envelope.
 weapons = Weapons.new
 assigned_weapon = solution_envelope.assign_weapon(weapons)
 puts "The " + assigned_weapon + " has been added to the Confidential Solutions Envelope."
-rooms = Rooms.new
-assigned_room = solution_envelope.assign_room(rooms)
+assigned_room = solution_envelope.assign_room(Rooms.list)
 puts "The " + assigned_room + " has been added to the Confidential Solutions Envelope."
 
 player.assign_starting_location
@@ -25,4 +25,8 @@ puts player.piece + " will start in: " + player.location
 
 player.secret_passageway_option
 
-# roll dice functionality available
+player.pick_next_room
+
+dice = Dice.new
+print "You roll the dice and get "
+puts dice.roll

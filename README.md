@@ -98,7 +98,7 @@ Backlog (1st level indented items first, 2nd level indent later)
   * As a player, I would like to know how far each room is from my current room.
   * As a player, I would like to be able to move part way toward a room.
 * DONE: As a player, I would like to use a secret passageway to move to another room.  Time spent: 3h 44m (20h 30m) (wrestling a lot with TDD and stories that have user interaction).
-* NEXT: As a player, I would like to move to another room without rolling the dice or using a secret passageway (until rolling dice to move works). Time spent: 1h
+* DONE: As a player, I would like to move to another room without rolling the dice or using a secret passageway (until rolling dice to move works). Time spent: 1h 45m
   * As a player, I would like make a suggestion (suspect, weapon, room) when I move into a room.
   * As a player, I would like to disprove a suggestion.
   * As a player, I would like to make an accusation. 

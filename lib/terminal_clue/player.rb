@@ -86,7 +86,7 @@ class Player
     change_location(new_location)
     puts "You are now in: " + @location
   end
-  
+
   def pick_next_room(test = false, pick = nil)
     
     begin
@@ -100,21 +100,21 @@ class Player
         puts pick
       end
       
-      # BUG: Logic here is broken
-      valid_room = Rooms.list.include?(pick)
-      case valid_room
-      when true
+      room_pick_valid = Rooms.list.include?(pick)
+      if room_pick_valid == false
+        puts response = "Really? You're picking a room that doesn't exist? Come on man!"
+      elsif room_pick_valid == true and @location == pick  
+        puts response = "You're already there. Come on man!"
+      elsif room_pick_valid == true and @location != pick
         puts response = "Got it."
         change_location(pick)
-      when false
-        puts response = "You're already there. Come on man!"
-      when nil
-        puts response = "Really? You're picking a room that doesn't exist? Come on man!"
+        return response # For unit testing only
       else
         puts "Error in Player.pick_piece."
         Process.exit(0)
       end
-    end while (valid_room == false or valid_room == nil) and test == false
+      
+    end while (room_pick_valid == false or (room_pick_valid == true and @location == pick)) and test == false
     return response # For unit testing only
   
   end

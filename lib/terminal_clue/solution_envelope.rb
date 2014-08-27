@@ -12,9 +12,9 @@ class SolutionEnvelope
     @weapon = weapons.list[index]
   end
 
-  def assign_room(rooms)
-    index = rand(rooms.list.length + 1) - 1 # length will give number elements, rand will generate number between 0 and length
-    @room = rooms.list[index]
+  def assign_room(rooms_list)
+    index = rand(rooms_list.length + 1) - 1 # length will give number elements, rand will generate number between 0 and length
+    @room = rooms_list[index]
   end
 
 end

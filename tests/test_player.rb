@@ -82,7 +82,7 @@ class TestPlayer < Test::Unit::TestCase
     player2.secret_passageway_option(true, "No")
     assert_equal("Ballroom", player2.location)
   end
-  
+
   def test_pick_next_room
     puts " testing"
     player = Player.new
@@ -99,5 +99,5 @@ class TestPlayer < Test::Unit::TestCase
       player.pick_next_room(true, "a9-3v#")
     )
   end
-  
+
 end

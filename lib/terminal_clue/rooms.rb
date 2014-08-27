@@ -1,9 +1,9 @@
 # Models the rooms on the board and the room cards
 class Rooms
 
-   @@list= 
-      [ "Hall", "Lounge", "Dining Room", "Kitchen", "Ballroom", "Conservatory",
-        "Billiard Room", "Library", "Study" ]
+@@list= 
+  [ "Hall", "Lounge", "Dining Room", "Kitchen", "Ballroom", "Conservatory",
+    "Billiard Room", "Library", "Study" ]
   
   @@secret_passageways = {
     "Conservatory" => "Lounge", "Study" => "Kitchen", "Lounge" => "Conservatory",

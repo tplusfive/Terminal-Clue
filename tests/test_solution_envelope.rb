@@ -44,12 +44,11 @@ class TestSolutionEnvelope < Test::Unit::TestCase
     puts " testing"
     rooms_tested = [] # keep track of randomly generated rooms to know when done
     solution_envelope = SolutionEnvelope.new
-    rooms = Rooms.new
-    while rooms_tested.length < rooms.list.length # keep generating random rooms until all have been generated
-      assigned_room = solution_envelope.assign_room(rooms)
+    while rooms_tested.length < Rooms.list.length # keep generating random rooms until all have been generated
+      assigned_room = solution_envelope.assign_room(Rooms.list)
       # assert whether the randomly assigned room is a valid room
       assert_block do
-        rooms.list.any? { |room| room == assigned_room}
+        Rooms.list.any? { |room| room == assigned_room}
       end
       # Add the assigned room to list of rooms already tested
       rooms_tested.push(assigned_room) unless rooms_tested.include?(assigned_room)
