@@ -100,4 +100,22 @@ class TestPlayer < Test::Unit::TestCase
     )
   end
 
+  def test_set_accusation_suspect
+    puts " testing"
+    player = Player.new
+    player.set_accusation_suspect("Col. Mustard")
+    assert_equal("Col. Mustard", player.accusation_suspect)
+  end
+
+  def test_accusation_suspect_correct?
+    puts " testing"
+    player = Player.new
+    solution_envelope = SolutionEnvelope.new
+    solution_envelope.assign_suspect(true, "Mr. Green")
+    player.set_accusation_suspect("Mr. Green")
+    assert_equal( true, player.accusation_suspect_correct?(solution_envelope) )
+    player.set_accusation_suspect("Miss Scarlet")
+    assert_equal( false, player.accusation_suspect_correct?(solution_envelope) )
+  end
+
 end

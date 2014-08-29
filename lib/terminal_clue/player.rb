@@ -3,7 +3,7 @@
 # Models the player
 class Player
   
-  attr_reader :piece, :location
+  attr_reader :piece, :location, :accusation_suspect
   
   def initialize
   end
@@ -117,6 +117,14 @@ class Player
     end while (room_pick_valid == false or (room_pick_valid == true and @location == pick)) and test == false
     return response # For unit testing only
   
+  end
+  
+  def set_accusation_suspect(accusation_suspect)
+    @accusation_suspect = accusation_suspect
+  end
+  
+  def accusation_suspect_correct?(solution_envelope)
+    @accusation_suspect == solution_envelope.suspect
   end
 
 end

@@ -99,10 +99,10 @@ Backlog (1st level indented items first, 2nd level indent later)
   * As a player, I would like to be able to move part way toward a room.
 * DONE: As a player, I would like to use a secret passageway to move to another room.  Time spent: 3h 44m (20h 30m) (wrestling a lot with TDD and stories that have user interaction).
 * DONE: As a player, I would like to move to another room without rolling the dice or using a secret passageway (until rolling dice to move works). Time spent: 1h 45m
-  * As a player, I would like make a suggestion (suspect, weapon, room) when I move into a room.
+  * As a player, I would like to make a suggestion (suspect, weapon, room) when I move into a room.
   * As a player, I would like to disprove a suggestion.
-  * As a player, I would like to make an accusation. 
-* As a player, I would like to play with one other person and not the computer.
+* NEXT: As a player, I would like to make an accusation. Time Spent: 40m. Suspect done except terminal_clue.rb
+  * As a player, I would like to play with one other person and not the computer.
 * As a player, I would like to verify an accusation.
   * As a player, I would like to pass to the next player if I can't disprove/verify.
   * As a player, I would like anyone who makes a wrong accusation to be out of the game.

@@ -2,9 +2,13 @@ class SolutionEnvelope
 
   attr_reader :suspect, :weapon, :room
 
-  def assign_suspect # BUG rand could generate a zero
-    index = rand(Suspects.list.length + 1) - 1 # length will give number elements, rand will generate number between 0 and length
-    @suspect = Suspects.list[index]
+  def assign_suspect(test = false, suspect = nil) # BUG rand could generate a zero
+    unless test
+      index = rand(Suspects.list.length + 1) - 1 # length will give number elements, rand will generate number between 0 and length
+      @suspect = Suspects.list[index]
+    else
+      @suspect = suspect
+    end
   end
 
   def assign_weapon(weapons)
