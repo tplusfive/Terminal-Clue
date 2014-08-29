@@ -66,7 +66,7 @@ I'm doing this as my game for Exercise 45 of Learn Ruby the Hard Way.  I wanted 
 
 Except for the ballroom, each room has 2 doors or 1 door and a secret passageway.  The Ballroom has 4 doors.
 When a suggestion is made, the next player has to prove it false to the suggester (and only to the suggester) if he has one of the cards.  Otherwise the next player proves it false.  If no one can prove it false you can end your turn or make an Accusation.
-You can make an accusation by saying "I accuse so and so of using such and such weapon in such and such room".  You don't have to be in that room. The accuser and only the accuser then checks the solution card envelope.  You can only do this once in a game.  If you're wrong then you can no longer win.  But you continue to prove suggestions false.
+You can make an accused by saying "I accuse so and so of using such and such weapon in such and such room".  You don't have to be in that room. The accuser and only the accuser then checks the solution card envelope.  You can only do this once in a game.  If you're wrong then you can no longer win.  But you continue to prove suggestions false.
 
 Distances (could make these up or get from board)
 
@@ -101,11 +101,11 @@ Backlog (1st level indented items first, 2nd level indent later)
 * DONE: As a player, I would like to move to another room without rolling the dice or using a secret passageway (until rolling dice to move works). Time spent: 1h 45m
   * As a player, I would like to make a suggestion (suspect, weapon, room) when I move into a room.
   * As a player, I would like to disprove a suggestion.
-* NEXT: As a player, I would like to make an accusation. Time Spent: 40m. Suspect done except terminal_clue.rb
+* NEXT: As a player, I would like to make an accused. Time Spent: 80m.
   * As a player, I would like to play with one other person and not the computer.
-* As a player, I would like to verify an accusation.
+* As a player, I would like to verify an accused.
   * As a player, I would like to pass to the next player if I can't disprove/verify.
-  * As a player, I would like anyone who makes a wrong accusation to be out of the game.
+  * As a player, I would like anyone who makes a wrong accused to be out of the game.
   * As a player, I would like to keep my own detective notepad? or have computer do it?
   * As a player, I would like it to be possible for room doors to be blocked by other players.
   * As a player, I would like if all doors are blocked to a room no one can leave.

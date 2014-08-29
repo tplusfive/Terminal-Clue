@@ -25,8 +25,15 @@ puts player.piece + " will start in: " + player.location
 
 player.secret_passageway_option
 
-player.pick_next_room
-
 dice = Dice.new
 print "You roll the dice and get "
 puts dice.roll
+puts "That was just for fun.  For now you can move to another room without rolling the dice."
+
+player.pick_next_room
+
+puts "Let's make an accusation."
+print "Who do you think committed the murder? >"
+player.accused_suspect = gets.chomp
+if Suspects.list.include?(pick) and player.
+  puts "

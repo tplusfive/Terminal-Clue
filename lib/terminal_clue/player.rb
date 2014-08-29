@@ -3,7 +3,7 @@
 # Models the player
 class Player
   
-  attr_reader :piece, :location, :accusation_suspect
+  attr_reader :piece, :location, :accused_suspect
   
   def initialize
   end
@@ -103,7 +103,7 @@ class Player
       room_pick_valid = Rooms.list.include?(pick)
       if room_pick_valid == false
         puts response = "Really? You're picking a room that doesn't exist? Come on man!"
-      elsif room_pick_valid == true and @location == pick  
+      elsif room_pick_valid == true and @location == pick
         puts response = "You're already there. Come on man!"
       elsif room_pick_valid == true and @location != pick
         puts response = "Got it."
@@ -119,12 +119,14 @@ class Player
   
   end
   
-  def set_accusation_suspect(accusation_suspect)
-    @accusation_suspect = accusation_suspect
+  def set_accused_suspect(accused_suspect)
+    @accused_suspect = accused_suspect
   end
-  
-  def accusation_suspect_correct?(solution_envelope)
-    @accusation_suspect == solution_envelope.suspect
+
+=begin  # need to test all three parts at once
+  def accused_suspect_correct?(solution_envelope)
+    @accused_suspect == solution_envelope.suspect
   end
+=end
 
 end
