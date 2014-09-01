@@ -106,6 +106,7 @@ class TestPlayer < Test::Unit::TestCase
     puts " testing"
     player = Player.new
     assert_equal( "Got it.", player.pick_accusation_suspect(true, "Mrs. White") )
+    assert_equal("Mrs. White", player.accusation_suspect)
     assert_equal(
       "Whaaa...???  That's not one of the suspects! Come on man!", 
       player.pick_accusation_suspect(true, "ai 87 00")
@@ -115,15 +116,43 @@ class TestPlayer < Test::Unit::TestCase
   def test_pick_accusation_weapon
     puts " testing"
     player = Player.new
-    assert_equal("Got it.", player.pick_accusation_weapon(true, "Knife"))
+    assert_equal( "Got it.", player.pick_accusation_weapon(true, "Knife") )
+    assert_equal("Knife", player.accusation_weapon)
     assert_equal("Whaaa...???  That's not one of the weapons! Come on man!", player.pick_accusation_weapon(true, "ai 87 00"))
   end
   
   def test_pick_accusation_room
     puts " testing"
     player = Player.new
-    assert_equal("Got it.", player.pick_accusation_room(true, "Library"))
+    assert_equal( "Got it.", player.pick_accusation_room(true, "Library") )
+    assert_equal("Library", player.accusation_room)
     assert_equal("Whaaa...???  That's not one of the rooms! Come on man!", player.pick_accusation_room(true, "08jwqe7"))
   end
   
+  def test_accusation_correct?
+    puts " testing"
+    player = Player.new
+    solution_envelope = SolutionEnvelope.new
+    solution_envelope.assign_suspect(true, "Col. Mustard")
+    solution_envelope.assign_weapon(true, "Knife")
+    solution_envelope.assign_room(true, "Hall")
+    # Correct accusation
+    player.pick_accusation_suspect(true, "Col. Mustard")
+    player.pick_accusation_weapon(true, "Knife")
+    player.pick_accusation_room(true, "Hall")
+    assert_equal( true, player.accusation_correct?(player, solution_envelope) )
+    # Wrong suspect
+    player.pick_accusation_suspect(true, "Mr. Green")
+    assert_equal( false, player.accusation_correct?(player, solution_envelope) )
+    player.pick_accusation_suspect(true, "Col. Mustard") # set back to correct suspect
+    # Wrong weapon
+    player.pick_accusation_weapon(true, "Revolver")
+    assert_equal( false, player.accusation_correct?(player, solution_envelope) )
+    player.pick_accusation_weapon(true, "Knife") # set back to correct weapon
+    # Wrong room
+    player.pick_accusation_room(true, "Billiard Room")
+    assert_equal( false, player.accusation_correct?(player, solution_envelope) )
+    player.pick_accusation_room(true, "Hall")
+  end
+
 end

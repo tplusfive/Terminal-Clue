@@ -15,9 +15,9 @@ suspects = Suspects.new
 assigned_suspect = solution_envelope.assign_suspect
 puts assigned_suspect + " has been added to the Confidential Solutions Envelope."
 weapons = Weapons.new
-assigned_weapon = solution_envelope.assign_weapon(weapons)
+assigned_weapon = solution_envelope.assign_weapon
 puts "The " + assigned_weapon + " has been added to the Confidential Solutions Envelope."
-assigned_room = solution_envelope.assign_room(Rooms.list)
+assigned_room = solution_envelope.assign_room
 puts "The " + assigned_room + " has been added to the Confidential Solutions Envelope."
 
 player.assign_starting_location
@@ -33,8 +33,13 @@ puts "That was just for fun.  For now you can move to another room without rolli
 player.pick_next_room
 
 puts "Let's make an accusation."
-print "Who do you think committed the murder? >"
-player.accused_suspect = gets.chomp
-if Suspects.list.include?(pick) and player.accused_suspect == solution_envelope.suspect
-  puts "You're right!"
-elsif 
+player.pick_accusation_suspect
+player.pick_accusation_room
+player.pick_accusation_weapon
+puts "You accusation is: " + player.accusation_suspect + " in the " + player.accusation_room + " with the " + player.accusation_weapon + "."
+if player.accusation_correct?(player, solution_envelope)
+  puts "Nice job. You got it right!"
+else
+  puts "So sorry, that is not correct.  It was " + solution_envelope.suspect + " in the " \
+    + solution_envelope.room + " with the " + solution_envelope.weapon + "."
+end

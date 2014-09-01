@@ -3,7 +3,7 @@
 # Models the player
 class Player
   
-  attr_reader :piece, :location, :accused_suspect
+  attr_reader :piece, :location, :accusation_suspect, :accusation_weapon, :accusation_room
   
   def initialize
   end
@@ -86,7 +86,6 @@ class Player
     return unless use_secret_passageway?(test, choice)
     new_location = Rooms.secret_passageways(@location)
     change_location(new_location)
-    puts "You are now in: " + @location
   end
 
   def pick_next_room(test = false, pick = nil)
@@ -125,8 +124,9 @@ class Player
   def pick_accusation_suspect(test = false, pick = nil)
     
     begin
-      puts "What suspect are you accusing? >"
+      puts "Which suspect are you accusing?"
       puts Suspects.list
+      print "> "
       
       unless test == true
         pick = gets.chomp
@@ -135,6 +135,7 @@ class Player
       suspect_pick_valid = Suspects.list.include?(pick)
       if suspect_pick_valid
         puts response = "Got it."
+        @accusation_suspect = pick
       else
         puts response = "Whaaa...???  That's not one of the suspects! Come on man!"
       end
@@ -146,8 +147,9 @@ class Player
   def pick_accusation_weapon(test = false, pick = nil)
     
     begin
-      puts "What weapon do you think the suspect used? >"
+      puts "What weapon do you think the suspect used?"
       puts Weapons.list
+      print "> "
       
       unless test == true
         pick = gets.chomp
@@ -156,6 +158,7 @@ class Player
       weapon_pick_valid = Weapons.list.include?(pick)
       if weapon_pick_valid
         puts response = "Got it."
+        @accusation_weapon = pick
       else
         puts response = "Whaaa...???  That's not one of the weapons! Come on man!"
       end
@@ -167,8 +170,9 @@ class Player
   def pick_accusation_room(test = false, pick = nil)
     
     begin
-      puts "Where do you think the murder happened? >"
+      puts "Where do you think the murder happened?"
       puts Rooms.list
+      print "> "
       
       unless test == true
         pick = gets.chomp
@@ -177,12 +181,19 @@ class Player
       room_pick_valid = Rooms.list.include?(pick)
       if room_pick_valid
         puts response = "Got it."
+        @accusation_room = pick
       else
         puts response = "Whaaa...???  That's not one of the rooms! Come on man!"
       end
     end while (test == false and room_pick_valid == false)
     return response
     
+  end
+  
+  def accusation_correct?(player, solution_envelope)
+    player.accusation_suspect == solution_envelope.suspect and
+    player.accusation_weapon == solution_envelope.weapon and
+    player.accusation_room == solution_envelope.room
   end
 
 end
