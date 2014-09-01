@@ -24,8 +24,6 @@ class Suspects
     @@starting_location
   end
 
-#  Must be only one instance of suspects class or picked? method won't work right.
-#  Tried a class variable but didn't see a good way to re-initialize for unit tests
   def self.picked?(choice)
     if @@picked[choice] == false
       @@picked[choice] = true

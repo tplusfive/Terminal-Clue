@@ -35,5 +35,6 @@ player.pick_next_room
 puts "Let's make an accusation."
 print "Who do you think committed the murder? >"
 player.accused_suspect = gets.chomp
-if Suspects.list.include?(pick) and player.
-  puts "
+if Suspects.list.include?(pick) and player.accused_suspect == solution_envelope.suspect
+  puts "You're right!"
+elsif 

@@ -8,10 +8,12 @@ class Player
   def initialize
   end
   
+  # TODO Consider re-factoring like pick_accused_suspect. Use one method to verify the pick exists in the list of suspects.
+  # ... Use another method to see if that piece has already been picked.  
   def pick_piece(test = false, pick = nil) # test, pick parameters for unit testing
     begin
-      # TODO: The if it says 'true' text is inaccurate now.  Need to show only rooms not taken yet.
-      puts "Choose your playing piece. If it says 'true' it's already been taken."
+      # TODO: Need to show only rooms not taken yet.
+      puts "Choose your playing piece."
       puts Suspects.list
       print "> "
       
@@ -114,19 +116,73 @@ class Player
         Process.exit(0)
       end
       
+    # BUG Where is the check for test == false???
     end while (room_pick_valid == false or (room_pick_valid == true and @location == pick)) and test == false
     return response # For unit testing only
   
   end
   
-  def set_accused_suspect(accused_suspect)
-    @accused_suspect = accused_suspect
+  def pick_accusation_suspect(test = false, pick = nil)
+    
+    begin
+      puts "What suspect are you accusing? >"
+      puts Suspects.list
+      
+      unless test == true
+        pick = gets.chomp
+      end
+      
+      suspect_pick_valid = Suspects.list.include?(pick)
+      if suspect_pick_valid
+        puts response = "Got it."
+      else
+        puts response = "Whaaa...???  That's not one of the suspects! Come on man!"
+      end
+    end while (test == false and suspect_pick_valid == false)
+    return response
+  
   end
 
-=begin  # need to test all three parts at once
-  def accused_suspect_correct?(solution_envelope)
-    @accused_suspect == solution_envelope.suspect
+  def pick_accusation_weapon(test = false, pick = nil)
+    
+    begin
+      puts "What weapon do you think the suspect used? >"
+      puts Weapons.list
+      
+      unless test == true
+        pick = gets.chomp
+      end
+      
+      weapon_pick_valid = Weapons.list.include?(pick)
+      if weapon_pick_valid
+        puts response = "Got it."
+      else
+        puts response = "Whaaa...???  That's not one of the weapons! Come on man!"
+      end
+    end while (test == false and weapon_pick_valid == false)
+    return response
+    
   end
-=end
+  
+  def pick_accusation_room(test = false, pick = nil)
+    
+    begin
+      puts "Where do you think the murder happened? >"
+      puts Rooms.list
+      
+      unless test == true
+        pick = gets.chomp
+      end
+      
+      room_pick_valid = Rooms.list.include?(pick)
+      if room_pick_valid
+        puts response = "Got it."
+      else
+        puts response = "Whaaa...???  That's not one of the rooms! Come on man!"
+      end
+    end while (test == false and room_pick_valid == false)
+    return response
+    
+  end
 
 end

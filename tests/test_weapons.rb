@@ -5,7 +5,6 @@ class TestWeapons < Test::Unit::TestCase
   
   def test_attr_reader
     puts " testing"
-    weapons = Weapons.new
-    assert_equal(false, weapons.list.empty?)
+    assert_equal(false, Weapons.list.empty?)
   end
 end

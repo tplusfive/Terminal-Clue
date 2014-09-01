@@ -10,7 +10,6 @@ class TestSolutionEnvelope < Test::Unit::TestCase
     puts " testing"
     suspects_tested = [] # keep track of randomly generated suspects to know when done
     solution_envelope = SolutionEnvelope.new
-    #suspects = Suspects.new
     while suspects_tested.length < Suspects.list.length # keep generating random suspects until all have been generated
       assigned_suspect = solution_envelope.assign_suspect
       # assert whether the randomly assigned suspect is a valid suspect
@@ -27,12 +26,11 @@ class TestSolutionEnvelope < Test::Unit::TestCase
     puts " testing"
     weapons_tested = [] # keep track of randomly generated weapons to know when done
     solution_envelope = SolutionEnvelope.new
-    weapons = Weapons.new
-    while weapons_tested.length < weapons.list.length # keep generating random weapons until all have been generated
-      assigned_weapon = solution_envelope.assign_weapon(weapons)
+    while weapons_tested.length < Weapons.list.length # keep generating random weapons until all have been generated
+      assigned_weapon = solution_envelope.assign_weapon
       # assert whether the randomly assigned weapon is a valid weapon
       assert_block do
-        weapons.list.any? { |weapon| weapon == assigned_weapon}
+        Weapons.list.any? { |weapon| weapon == assigned_weapon}
       end
       # Add the assigned weapon to list of weapons already tested
       weapons_tested.push(assigned_weapon) unless weapons_tested.include?(assigned_weapon)
@@ -45,7 +43,7 @@ class TestSolutionEnvelope < Test::Unit::TestCase
     rooms_tested = [] # keep track of randomly generated rooms to know when done
     solution_envelope = SolutionEnvelope.new
     while rooms_tested.length < Rooms.list.length # keep generating random rooms until all have been generated
-      assigned_room = solution_envelope.assign_room(Rooms.list)
+      assigned_room = solution_envelope.assign_room
       # assert whether the randomly assigned room is a valid room
       assert_block do
         Rooms.list.any? { |room| room == assigned_room}

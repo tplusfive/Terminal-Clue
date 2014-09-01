@@ -100,40 +100,30 @@ class TestPlayer < Test::Unit::TestCase
     )
   end
 
-  def test_set_accused_suspect
+# Accusation: Need to pick, set, validate suspect, weapon, room separately
+# Then test all the parts of the accusation at once.
+  def test_pick_accusation_suspect
     puts " testing"
     player = Player.new
-    player.set_accused_suspect("Col. Mustard")
-    assert_equal("Col. Mustard", player.accused_suspect)
+    assert_equal( "Got it.", player.pick_accusation_suspect(true, "Mrs. White") )
+    assert_equal(
+      "Whaaa...???  That's not one of the suspects! Come on man!", 
+      player.pick_accusation_suspect(true, "ai 87 00")
+    )
+  end
+
+  def test_pick_accusation_weapon
+    puts " testing"
+    player = Player.new
+    assert_equal("Got it.", player.pick_accusation_weapon(true, "Knife"))
+    assert_equal("Whaaa...???  That's not one of the weapons! Come on man!", player.pick_accusation_weapon(true, "ai 87 00"))
   end
   
-  def test_make_accusation # TODO add weapon and room next
+  def test_pick_accusation_room
     puts " testing"
     player = Player.new
-    solution_envelope = SolutionEnvelope.new
-    solution_envelope.assign_suspect(true, "Mrs. White")
-    assert_equal("You got it right!", player.make_accusation(true, "Mrs. White")
-    assert_equal("There are no suspects by that name!", player.make_accusation(true, "k63dh")
-    assert_equal("Sorry. That was a good try but wrong.", player.make_accusation(true, "Mr. Green")
-    # further messages for weapons and rooms.
-    # STOPPED HERE - may need to check suspect is a valid suspect separately from whether 
-    # it is correct.  Want to get the 3 parts of the accusation first and then give one 
-    # response back as to whether the accusation was correct or not.
-    
+    assert_equal("Got it.", player.pick_accusation_room(true, "Library"))
+    assert_equal("Whaaa...???  That's not one of the rooms! Come on man!", player.pick_accusation_room(true, "08jwqe7"))
   end
-
-# next test really needs to be test_accusation - we want to test if all three parts are correct all at one time
-=begin
-  def test_accused_suspect_correct?
-    puts " testing"
-    player = Player.new
-    solution_envelope = SolutionEnvelope.new
-    solution_envelope.assign_suspect(true, "Mr. Green")
-    player.set_accused_suspect("Mr. Green")
-    assert_equal( true, player.accused_suspect_correct?(solution_envelope) )
-    player.set_accused_suspect("Miss Scarlet")
-    assert_equal( false, player.accused_suspect_correct?(solution_envelope) )
-  end
-=end
-
+  
 end

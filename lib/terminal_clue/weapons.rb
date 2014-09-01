@@ -1,11 +1,14 @@
 # Models the weapon piece and the weapon card
 class Weapons
-
-  attr_reader :list
+  
+  @@list = 
+      [ "Knife", "Candlestick", "Revolver", "Rope", "Lead Pipe", "Wrench" ]
   
   def initialize
-    @list = 
-      [ "Knife", "Candlestick", "Revolver", "Rope", "Lead Pipe", "Wrench" ]
+  end
+  
+  def self.list
+    @@list
   end
 
 end

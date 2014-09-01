@@ -101,9 +101,9 @@ Backlog (1st level indented items first, 2nd level indent later)
 * DONE: As a player, I would like to move to another room without rolling the dice or using a secret passageway (until rolling dice to move works). Time spent: 1h 45m
   * As a player, I would like to make a suggestion (suspect, weapon, room) when I move into a room.
   * As a player, I would like to disprove a suggestion.
-* NEXT: As a player, I would like to make an accused. Time Spent: 80m.
+* NEXT: As a player, I would like to make an accusation. Time Spent: 80m.  Have gotten accusation from player and validated but need to set the accusation attributes on the player.
   * As a player, I would like to play with one other person and not the computer.
-* As a player, I would like to verify an accused.
+* As a player, I would like to verify an accusation.
   * As a player, I would like to pass to the next player if I can't disprove/verify.
   * As a player, I would like anyone who makes a wrong accused to be out of the game.
   * As a player, I would like to keep my own detective notepad? or have computer do it?
