@@ -104,6 +104,7 @@ Backlog (1st level indented items first, 2nd level indent later)
 * DONE: As a player, I would like to make an accusation. Time Spent: 3h 20m
   * As a player, I would like to play with one other person and not the computer.
 * DONE: As a player, I would like to verify an accusation.  Time Spent: 1h
+* As a player, I would like to play a game.  STOPPED HERE: Tried to think if I could play a minimal game at this point against one other person (not computer), using the physical cards dealt between the two of us, but can't do it.  Need to deal cards with computer.  Otherwise one person has to know what's in the solution envelope and remove them from the deck before dealing cards to the players.  Unless a third person removed the solution envelope cards from the deck.
   * As a player, I would like to pass to the next player if I can't disprove/verify.
   * As a player, I would like anyone who makes a wrong accused to be out of the game.
   * As a player, I would like to keep my own detective notepad? or have computer do it?

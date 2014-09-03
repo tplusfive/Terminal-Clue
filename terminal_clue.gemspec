@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = ['lib/terminal_clue.rb']
-  spec.executables   = ['bin/terminal_clue']
-  spec.test_files    = ['tests/terminal_clue_tests.rb']
+  spec.executables   = ['terminal_clue']
+  #spec.test_files    = ['tests/terminal_clue_tests.rb']
   spec.require_paths = ["lib"]
 end
